@@ -36,7 +36,7 @@ if [[ $(which install-LIC) = "" ]]; then
   cat > /usr/bin/install-LIC << 'EOF'
 #!/bin/bash
 read -p "🔑 INGRESAR CLAVE DE LICENCIA: " CLAVE
-if [[ "$CLAVE" == "FÉNIX" ]]; then
+if [[ "$CLAVE" == "FENIX" ]]; then
   echo "✅ LICENCIA CORRECTA - ACCESO PERMITIDO"
   exit 0
 else
