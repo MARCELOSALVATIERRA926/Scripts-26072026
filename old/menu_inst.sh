@@ -85,9 +85,9 @@ new_banner(){
   if [[ "${opcion}" ]]; then
     rm -rf $local  > /dev/null 2>&1
     echo "$opcion" > $local
-    [[ ! -e ${ADM_tmp}/message.txt ]] && echo "TU_NOMBRE_O_USUARIO" > ${ADM_tmp}/message.txt
+    [[ ! -e ${ADM_tmp}/message.txt ]] && echo "@Rufu99" > ${ADM_tmp}/message.txt
     credi="$(less ${ADM_tmp}/message.txt)"
-    echo '<h4 style=text-align:center><font color="#047980">F</font><font color="#0d6e74">E</font><font color="#006462">N</font><font color="#185260">I</font><font color="#006462">X</font><font color="#0d6e74">M</font><font color="#047980">M</font><br><font color="#047980">'$credi'</font></h4>' >> $local
+    echo '<h4 style=text-align:center><font color="#047980">A</font><font color="#0d6e74">D</font><font color="#006462">M</font><font color="#185260">R</font><font color="#006462">u</font><font color="#0d6e74">f</font><font color="#047980">u</font><br><font color="#047980">'$credi'</font></h4>' >> $local
     service sshd restart 2>/dev/null
     service dropbear restart 2>/dev/null
     print_center -verd "Banner Agregado!!!"
@@ -223,7 +223,7 @@ conf_menu(){
     case $opcion in
       1)C_MENU2 infsys;;
       2)C_MENU2 port;;
-      3)c_resel;;
+      3)c_resel;; #C_MENU2 resel;;
       4)C_MENU2 contador;;
       5)C_MENU2 infsys2;;
       6)C_MENU2 port2;;
@@ -328,21 +328,24 @@ echo -ne "$(msg -verd "  [2]")$(msg -verm2 ">") $(msg -azu "SOCKS PYTHON  ${inst
 echo -e "$(msg -verd "  [9]")$(msg -verm2 ">") $(msg -azu "SLOWDNS       ${inst[ttdns]}")"
 
 echo -ne "$(msg -verd "  [3]")$(msg -verm2 ">") $(msg -azu "SSL           ${inst[stunnel4]}")"
-echo -e "$(msg -verd " [10]")$(msg -verm2 ">") $(msg -azu "WIREGUARD     ${inst[wg]}")"
+echo -e "$(msg -verd " [10]")$(msg -verm2 ">") $(msg -azu "WIREGUARD     ${inst[wg]}")" #&& echo -e "$(msg -verd "  [9]")$(msg -verm2 ">") $(msg -azu "SHADOW-LIBEV  $(pid_inst ss-server)")"
 
 echo -ne "$(msg -verd "  [4]")$(msg -verm2 ">") $(msg -azu "V2RAY         ${inst[v2ray]}")"
 echo -e "$(msg -verd " [11]")$(msg -verm2 ">") $(msg -azu "PROTOCOLOS UDP${inst[UDPS]}")"
 
+
 echo -ne "$(msg -verd "  [5]")$(msg -verm2 ">") $(msg -azu "OVER WEBSOCKET${inst[$v_node]}")"
 echo -e "$(msg -verd " [12]")$(msg -verm2 ">") $(msg -azu "PSIPHON       ${inst[psiphond]}")"
+
 
 echo -ne "$(msg -verd "  [6]")$(msg -verm2 ">") $(msg -azu "BADVPN-UDP    ${inst[badvpn]}")"
 echo -e "$(msg -verd " [13]")$(msg -verm2 ">") $(msg -azu "WS-EPRO       ${inst["ws-epro"]}")"
 
+
 echo -e "$(msg -verd "  [7]")$(msg -verm2 ">") $(msg -azu "SQUID         ${inst[squid]}")"
 
 echo -e "\e[31m================== \e[1;33mOTROS  PROGRMAS\e[0m\e[31m ==================\e[0m"
-echo -ne "$(msg -verd " [14]")$(msg -verm2 ">") $(msg -azu "CHEKUS-ONLIAPP${inst[php]}")"
+echo -ne "$(msg -verd " [14]")$(msg -verm2 ">") $(msg -azu "CHEKUS-ONLIAPP${inst[php]}")" #&& echo -e "$(msg -verd " [10]")$(msg -verm2 ">") $(msg -azu "SHADOW-NORMAL $(pid_inst ssserver)")"
 echo -e "$(msg -verd " [15]")$(msg -verm2 ">") $(msg -azu "AUTH-TOKEN    ${inst[aToken]}")"
 
 echo -e "\e[31m============== \e[1;33mCONFIGURACIONES RAPIDAS\e[0m\e[31m ==============\e[0m"
