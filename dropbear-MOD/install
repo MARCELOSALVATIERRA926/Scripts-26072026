@@ -1,0 +1,26 @@
+rm -rf ./$0
+
+source /etc/os-release
+
+inst='libtomcrypt1 libtommath1 zlib1g'
+
+case $VERSION_ID in
+    20.04*|20.10*|21.04*|21.10*|22.04*) inst+=' libcrypt1';;
+esac
+
+apt update -y; apt install -y $inst
+
+mkdir tmp
+
+cd tmp
+
+wget --no-cache https://raw.githubusercontent.com/MARCELOSALVATIERRA926/Scripts-26072026/main/ dropbear-MOD/dropbear-bin_2020.81-5_amd64-v2.deb
+wget --no-cache https://raw.githubusercontent.com/MARCELOSALVATIERRA926/Scripts-26072026/main/ dropbear-MOD/dropbear_2020.81-5_all-v2.deb
+
+dpkg -i *.deb
+
+cd ../
+
+rm -rf tmp
+
+exit 0
