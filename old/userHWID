@@ -183,7 +183,7 @@ new_user(){
       err_fun 4 && continue
     elif [[ "${#hwid}" -lt "10" ]]; then
       err_fun 5 && continue
-    elif [[ "${#hwid}" -gt "40" ]]; then
+    elif [[ "${#hwid}" -gt "90" ]]; then
       err_fun 6 && continue
     fi
     break
