@@ -167,7 +167,7 @@ new_user(){
       return
     elif [[ "${#cliente}" -lt "4" ]]; then
       err_fun 2 && continue
-    elif [[ "${#cliente}" -gt "20" ]]; then
+    elif [[ "${#cliente}" -gt "90" ]]; then
       err_fun 3 && continue
     elif [[ "$(echo ${usuarios_ativos[@]}|grep -w "$cliente")" ]]; then
       err_fun 14 && continue
